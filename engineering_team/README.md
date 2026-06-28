@@ -1,7 +1,10 @@
-# EngineeringTeam Crew
+# CrewAI Multi-Agent Project
 
-Welcome to the EngineeringTeam Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+A modular multi-agent AI application built using **CrewAI**, demonstrating collaborative autonomous agents working together to accomplish specialized tasks.
 
+This project showcases how multiple AI agents can be orchestrated using CrewAI to solve domain-specific problems through configurable workflows, custom tools, and structured task execution.
+
+---
 
 ## Features
 
@@ -154,5 +157,3 @@ This project demonstrates:
 ## License
 
 This project is licensed under the MIT License.
-
-Let's create wonders together with the power and simplicity of crewAI.
