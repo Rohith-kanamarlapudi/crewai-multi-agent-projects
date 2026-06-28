@@ -1,0 +1,55 @@
+find_trending_companies:
+  description: >
+    Search recent financial news and identify the top 2-3 trending companies
+    in the {sector} sector. Focus on companies receiving significant media,
+    investor, or analyst attention.
+
+  expected_output: >
+    A JSON list containing:
+    - company name
+    - ticker symbol
+    - reason the company is trending
+
+  agent: trending_company_finder
+  output_file: output/trending_companies.json
+
+research_trending_companies:
+  description: >
+    For each trending company identified, perform detailed research including:
+    - market position
+    - competitive advantages
+    - recent developments
+    - growth opportunities
+    - investment potential
+
+  expected_output: >
+    A detailed research report for each company.
+
+  agent: financial_researcher
+
+  context:
+    - find_trending_companies
+
+  output_file: output/research_report.json
+
+pick_best_company:
+  description: >
+    Analyze all company research reports and select the strongest investment opportunity.
+
+    Use the PushNotificationTool to send:
+    - Company name
+    - One-sentence investment rationale
+
+    Then provide a detailed explanation of:
+    - Why the selected company was chosen
+    - Why the remaining companies were not selected
+
+  expected_output: >
+    A detailed investment recommendation report.
+
+  agent: stock_picker
+
+  context:
+    - research_trending_companies
+
+  output_file: output/decision.md
